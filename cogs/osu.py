@@ -2,7 +2,6 @@ import os
 from discord import Embed
 from ossapi import OssapiAsync, GameMode, Mod
 from discord.ext import commands
-import requests
 
 def simple_embed(title: str, description: str, fields: list = [], footer: str = None , footer_icon: str = None, image: str = None, thumbnail: str = None, author_name: str = None,
     author_icon: str = None, author_url: str = None) -> Embed:
@@ -521,4 +520,5 @@ class Osu(commands.Cog):
             self.beatmap_mode = GameMode[beatmap.mode.value.upper()]
 
 async def setup(bot):
+
     await bot.add_cog(Osu(bot))
